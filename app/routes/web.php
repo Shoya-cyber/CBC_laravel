@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SortableController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SortableController::class, 'index']);
+Route::post('/register', [SortableController::class, 'register']);
+Route::post('/update', [SortableController::class, 'update']);
